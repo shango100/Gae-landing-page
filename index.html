@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unlock Your Energy Centers: Weekly Chakra Healing Guide</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        /* Previous styles remain the same */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #E8D9F0 100%);
+            color: #2c3e50;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #6a3093;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .subheadline {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .benefits {
+            background: #f8f4fc;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .benefits li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .benefits li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #6a3093;
+            outline: none;
+        }
+        button {
+            background: linear-gradient(135deg, #6a3093 0%, #a044ff 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .bonus {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: #fff5e6;
+            border-radius: 10px;
+            border: 2px dashed #ffa500;
+        }
+        .bonus h3 {
+            color: #ffa500;
+            margin: 0 0 10px 0;
+        }
+        .meditation-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        /* New styles for success/error messages */
+        .message {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        /* Loading spinner */
+        .loading {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #6a3093;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unlock Your Energy Centers: A Free Weekly Guide to Healing & Balance</h1>
+            <div class="subheadline">
+                Join [Client's Name] on a journey of self-healing and energy alignment. Receive exclusive insights, guided meditations, and practical techniques to balance your chakras and elevate your well-being.
+            </div>
+        </div>
+
+        <div class="benefits">
+            <h2>Transform Your Life Through Energy Healing</h2>
+            <ul>
+                <li>Understand and heal your energy centers (chakras)</li>
+                <li>Learn simple yoga, breathwork, and mindfulness practices</li>
+                <li>Get exclusive tips on emotional and spiritual healing</li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <form id="newsletter-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name (optional)">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                </div>
+                <button type="submit">
+                    <span id="button-text">Start Healing Now</span>
+                    <div id="loading" class="loading"></div>
+                </button>
+                <div id="success-message" class="message success-message">
+                    Thank you for joining our healing journey! Check your email for your free meditation guide.
+                </div>
+                <div id="error-message" class="message error-message">
+                    Oops! Something went wrong. Please try again or contact us directly.
+                </div>
+            </form>
+        </div>
+
+        <div class="bonus">
+            <div class="meditation-icon">🌿</div>
+            <h3>Special Welcome Gift</h3>
+            <p>Sign up now and receive a <strong>free guided meditation</strong> to balance your chakras!</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Initialize EmailJS
+            emailjs.init("0ojKm6YDjxj0PubtT"); // Replace with your EmailJS public key
+            
+            const form = document.getElementById('newsletter-form');
+            const buttonText = document.getElementById('button-text');
+            const loading = document.getElementById('loading');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Show loading state
+                buttonText.style.display = 'none';
+                loading.style.display = 'block';
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Get form values
+                const name = document.getElementById('name').value || 'Subscriber';
+                const email = document.getElementById('email').value;
+
+                // Send email using EmailJS
+                emailjs.send(
+                    "service_9ujnfce", // Replace with your EmailJS service ID
+                    "template_fp2sce7", // Replace with your EmailJS template ID
+                    {
+                        to_name: name,
+                        user_email: email,
+                        // Add any other template variables you need
+                    }
+                ).then(
+                    function(response) {
+                        // Success
+                        buttonText.style.display = 'block';
+                        loading.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        form.reset();
+                    },
+                    function(error) {
+                        // Error
+                        buttonText.style.display = 'block';
+                        loading.style.display = 'none';
+                        errorMessage.style.display = 'block';
+                        console.error("EmailJS Error:", error);
+                    }
+                );
+            });
+        })();
+    </script>
+</body>
+</html>
